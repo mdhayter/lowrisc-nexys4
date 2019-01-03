@@ -52,6 +52,21 @@ set files [list \
                [file normalize $base_dir/src/main/verilog/ps2_keyboard.v] \
                [file normalize $base_dir/src/main/verilog/ps2_translation_table.v] \
                [file normalize $base_dir/src/main/verilog/my_fifo.v] \
+               [file normalize $base_dir/src/main/verilog/my_2clk_fifo.v] \
+               [file normalize $base_dir/src/main/verilog/usb_uart.v] \
+               [file normalize $base_dir/src/main/verilog/usb_serial_fifo_ep.v] \
+	       [file normalize $base_dir/src/main/verilog/common/edge_detect.v] \
+	       [file normalize $base_dir/src/main/verilog/common/serial.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_in_arb.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_in_pe.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_out_arb.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_out_pe.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_pe.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_rx.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_tx_mux.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_fs_tx.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_reset_det.v] \
+	       [file normalize $base_dir/src/main/verilog/common/usb_serial_ctrl_ep.v] \
                [file normalize $base_dir/src/main/verilog/fstore2.v] \
                [file normalize $base_dir/src/main/verilog/dualmem.v] \
                [file normalize $base_dir/src/main/verilog/uart.v] \
@@ -135,7 +150,7 @@ set_property -dict [list \
                         CONFIG.CLKOUT1_JITTER {114.829} \
                         CONFIG.CLKOUT1_PHASE_ERROR {98.575} \
                         CONFIG.CLKOUT2_DRIVES {BUFG} \
-                        CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {60.000} \
+                        CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {48.000} \
                         CONFIG.CLKOUT2_USED {1} \
                         CONFIG.CLK_OUT2_PORT {clk_io_uart} \
                         CONFIG.CLKOUT3_DRIVES {BUFG} \

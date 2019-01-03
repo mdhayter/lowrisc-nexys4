@@ -199,8 +199,20 @@ set_property PACKAGE_PIN D5 [get_ports o_erefclk]
 set_property IOSTANDARD LVCMOS33 [get_ports o_erefclk]
 set_property -dict {PACKAGE_PIN B8 IOSTANDARD LVCMOS33} [get_ports i_emdint]
 
+## USB on PMOD JD
+set_property PACKAGE_PIN H4 [get_ports usb_dp]
+set_property IOSTANDARD LVCMOS33 [get_ports usb_dp]
+set_property DRIVE 16 [get_ports usb_dp]
+set_property SLEW FAST [get_ports usb_dp]
+set_property PACKAGE_PIN H1 [get_ports usb_dn]
+set_property IOSTANDARD LVCMOS33 [get_ports usb_dn]
+set_property DRIVE 16 [get_ports usb_dn]
+set_property SLEW FAST [get_ports usb_dn]
+set_property PACKAGE_PIN G1 [get_ports usb_pullup]
+set_property IOSTANDARD LVCMOS33 [get_ports usb_pullup]
+set_property PACKAGE_PIN G3 [get_ports usb_sense]
+set_property IOSTANDARD LVCMOS33 [get_ports usb_sense]
+
+
 set_property CONFIG_MODE SPIx4 [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
-
-
-

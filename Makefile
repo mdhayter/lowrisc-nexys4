@@ -87,6 +87,7 @@ lowrisc_headers = \
 
 verilog_srcs = \
 	$(top_dir)/src/main/verilog/chip_top.sv \
+	$(top_dir)/src/main/verilog/periph_soc.sv \
 	$(top_dir)/src/main/verilog/spi_wrapper.sv \
 	$(top_dir)/vsrc/AsyncResetReg.v \
 	$(top_dir)/vsrc/plusarg_reader.v \
@@ -137,7 +138,7 @@ junk += $(generated_dir)
 
 project = $(project_name)/$(project_name).xpr
 project: verilog $(project)
-$(project): | $(lowrisc_srcs) $(lowrisc_headers)
+$(project): | $(lowrisc_srcs) $(lowrisc_headers)  script/make_project.tcl
 	$(VIVADO) -mode batch -source script/make_project.tcl -tclargs $(project_name) $(CONFIG)
 	ln -s $(proj_dir)/$(boot_mem) $(project_name)/$(project_name).runs/synth_1/boot.mem
 	ln -s $(proj_dir)/$(boot_mem) $(project_name)/$(project_name).sim/sim_1/behav/boot.mem
